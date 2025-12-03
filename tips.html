@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>เกร็ดความรู้สัตว์เลี้ยง | Think of Pet</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@500&family=Itim&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --main-pink: #ffd6e0;
+  --main-blue: #cde8ff;
+  --main-green: #d4f6d6;
+  --accent: #ffb6c1;
+  --text-color: #333;
+}
+
+/* Smooth animation */
+* {
+  transition: 0.2s ease;
+}
+
+body {
+  margin: 0;
+  font-family: "Prompt", sans-serif;
+  background: radial-gradient(circle at top, #fff6fb, #e9f8ff);
+  background-attachment: fixed;
+}
+
+/* Header */
+header {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background-color:var(--main-pink);
+  padding:15px 40px;
+  position:sticky;
+  top:0;
+  z-index:10;
+  box-shadow:0 2px 10px rgba(0,0,0,0.15);
+  backdrop-filter: blur(6px);
+  border-bottom: 3px solid #ffb6c1;
+}
+
+.logo {
+  font-size:1.8rem;
+  font-weight:bold;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.logo::before {
+  content:"🐾";
+  font-size:1.9rem;
+}
+
+nav a {
+  text-decoration:none;
+  color:#333;
+  margin:0 15px;
+  font-weight:500;
+  padding:5px 0;
+  border-bottom: 2px solid transparent;
+}
+nav a:hover {
+  color:#ff4081;
+  border-bottom: 2px solid #ff4081;
+  transform: translateY(-2px);
+}
+
+/* Main Content */
+main {
+  max-width:1200px;
+  margin:0 auto;
+  padding:40px 20px;
+}
+
+h1 {
+  font-family:"Mali", cursive;
+  font-size:3rem;
+  text-align:center;
+  margin-bottom:10px;
+  background:linear-gradient(90deg,#ff9eb3,#a8e6cf,#9ecbff);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  text-shadow:0 0 20px rgba(255,182,193,0.25);
+}
+
+.subtitle {
+  text-align:center;
+  font-family:"Itim";
+  font-size:1.3rem;
+  color:#666;
+  margin-bottom:55px;
+}
+
+/* Tips Grid */
+.tips-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
+  gap:35px;
+  padding:20px;
+}
+
+.tip-card {
+  background:white;
+  padding:20px;
+  border-radius:22px;
+  box-shadow:0 8px 22px rgba(0,0,0,0.12);
+  transition:0.35s;
+  position:relative;
+  overflow:hidden;
+  border:2px solid #ffe3eb;
+  transform: translateY(0);
+}
+
+.tip-card:hover {
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 16px 40px rgba(0,0,0,0.18);
+  border-color:#ffb6c1;
+}
+
+.tip-card::before {
+  content:"";
+  position:absolute;
+  top:-40%;
+  left:-40%;
+  width:180%;
+  height:180%;
+  background:radial-gradient(circle,#ffb6c1 0%, transparent 60%);
+  opacity:0;
+  transition:0.5s;
+}
+
+.tip-card:hover::before {
+  opacity:0.15;
+}
+
+.tip-card img {
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+  margin-bottom:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.15);
+  transition:0.3s;
+}
+
+.tip-card:hover img {
+  transform: scale(1.05);
+}
+
+.tip-title {
+  font-size:1.45rem;
+  font-weight:bold;
+  margin-bottom:12px;
+  color:#333;
+  font-family:"Mali";
+}
+
+.tip-text {
+  font-size:1rem;
+  color:#555;
+  line-height:1.6;
+}
+
+/* Footer */
+footer {
+  background: var(--main-pink);
+  padding:35px 10px;
+  text-align:center;
+  margin-top:70px;
+  box-shadow:0 -3px 12px rgba(0,0,0,0.12);
+  font-size:1.1rem;
+  border-top: 3px solid #ffb6c1;
+}
+
+footer p:last-child {
+  font-size:0.9rem;
+  color:#444;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">Think of Pet</div>
+  <nav>
+    <a href="index.html">หน้าแรก</a>
+    <a href="tips.html">เกร็ดความรู้</a>
+    <a href="products.html">สินค้าทั้งหมด</a>
+    <a href="delivery.html">เดลิเวอรี่ใกล้บ้านคุณ 🚚</a>
+    <a href="contact.html">ติดต่อร้าน</a>
+  </nav>
+</header>
+
+<main>
+  <h1>เกร็ดความรู้สำหรับสัตว์เลี้ยง 🐶🐱</h1>
+  <p class="subtitle">รวมความรู้ดี ๆ ที่ช่วยให้เจ้าของดูแลสัตว์เลี้ยงได้อย่างมีคุณภาพ</p>
+
+  <div class="tips-grid">
+
+    <!-- TIP 1 -->
+    <div class="tip-card">
+      <img src="img/22.jpg" alt="Dog Bathing">
+      <div class="tip-title">🐕 อาบน้ำหมาบ่อยแค่ไหน?</div>
+      <div class="tip-text">
+        สุนัขควรอาบน้ำทุก 1–2 สัปดาห์ ขึ้นอยู่กับสภาพผิว หนัง ปริมาณเหงื่อ
+        และสายพันธุ์ หากอาบบ่อยเกินไปอาจทำให้ผิวแห้ง ระคายเคืองได้
+      </div>
+    </div>
+
+    <!-- TIP 2 -->
+    <div class="tip-card">
+      <img src="img/21.jpg" alt="Cat Litter">
+      <div class="tip-title">🐱 กลิ่นกระบะทรายแมวลดได้อย่างไร?</div>
+      <div class="tip-text">
+        ควรตักของเสียออกวันละ 1–2 ครั้ง และเปลี่ยนทรายใหม่ทุก 5–7 วัน
+        รวมถึงทำความสะอาดกระบะด้วยน้ำสบู่อ่อน ๆ เป็นประจำเพื่อลดแบคทีเรีย
+      </div>
+    </div>
+
+    <!-- TIP 3 -->
+    <div class="tip-card">
+      <img src="img/24.jpg" alt="Pet Teeth Brushing">
+      <div class="tip-title">🦷 แปรงฟันสัตว์เลี้ยงสำคัญแค่ไหน?</div>
+      <div class="tip-text">
+        การแปรงฟันช่วยลดหินปูนและกลิ่นปาก ควรทำสัปดาห์ละ 2–3 ครั้ง
+        หรือใช้อุปกรณ์เสริม เช่น ยาสีฟันสัตว์เลี้ยง เจลลดคราบ
+      </div>
+    </div>
+
+    <!-- TIP 4 -->
+    <div class="tip-card">
+      <img src="img/25.jpg" alt="Dog Toys">
+      <div class="tip-title">🎾 ของเล่นช่วยลดความเครียดได้</div>
+      <div class="tip-text">
+        สุนัขและแมวต้องการการกระตุ้นสมอง ของเล่นช่วยลดความเครียด
+        ป้องกันพฤติกรรมทำลายข้าวของ และทำให้สัตว์สนุกสนานมากขึ้น
+      </div>
+    </div>
+
+    <!-- TIP 5 -->
+    <div class="tip-card">
+      <img src="img/26.jpg" alt="Pet Diet">
+      <div class="tip-title">🍽️ ให้อาหารอย่างเหมาะสม</div>
+      <div class="tip-text">
+        เลือกอาหารตามช่วงวัยและน้ำหนัก ควรให้อาหารตรงเวลา
+        และหลีกเลี่ยงขนมปริมาณมากเพราะอาจทำให้อ้วนง่าย
+      </div>
+    </div>
+
+    <!-- TIP 6 -->
+    <div class="tip-card">
+      <img src="img/27.jpg" alt="Pet Water Drinking">
+      <div class="tip-title">💧 น้ำสำคัญกว่าที่คิด!</div>
+      <div class="tip-text">
+        สัตว์เลี้ยงควรมีน้ำสะอาดให้ดื่มตลอดเวลา เพราะการขาดน้ำทำให้เกิดปัญหาสุขภาพ
+        เช่น ภาวะไตทำงานหนัก ขนร่วง และอ่อนเพลีย ควรเปลี่ยนน้ำทุกวัน
+        และใช้ชามน้ำที่ทำความสะอาดง่ายเพื่อลดเชื้อโรค
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Think of Pet | ร้านขายอุปกรณ์สัตว์เลี้ยงครบวงจร 💕</p>
+</footer>
+
+</body>
+</html>
